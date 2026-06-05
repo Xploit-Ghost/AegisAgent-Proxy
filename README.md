@@ -6,7 +6,7 @@
   </p>
 
   <p align="center">
-    <h3><a href="https://aegis-proxy.streamlit.app/">🔥 Test out the live deployment here! 🔥</a></h3>
+    <h3><a href="https://aegis-proxy.streamlit.app/">Test out the live deployment here!</a></h3>
   </p>
 
   <p align="center">
@@ -19,7 +19,7 @@
 
 <br />
 
-## 🛡️ Overview
+## Overview
 
 **AegisAgent-Proxy** is a cutting-edge Security Information and Event Management (SIEM) proxy specifically designed to protect Large Language Models (LLMs) and autonomous agents from sophisticated adversarial attacks. 
 
@@ -27,29 +27,29 @@ Traditional signature-based blacklists are trivially bypassed by modern attacker
 
 ---
 
-## ⚙️ How It Works: The Hybrid Pipeline
+## How It Works: The Hybrid Pipeline
 
 AegisAgent-Proxy evaluates incoming prompts through a multi-layered gauntlet. Each layer is engineered from scratch to strip away a specific vector of attacker evasion.
 
-### 1. Base64 De-obfuscation Pipeline 🕵️‍♂️
+### 1. Base64 De-obfuscation Pipeline 
 Attackers often encode malicious instructions (e.g., `Ignore previous instructions` -> `SWdub3JlIHByZXZpb3VzIGluc3RydWN0aW9ucw==`) to blind simple guardrails.
 * **Mechanism:** The engine manually scans the raw input character-by-character, extracting contiguous alphanumeric blocks. If a block matches Base64 entropy and padding structures, it automatically decodes the hidden payload and appends it to the scanning context.
 
-### 2. De-fragmentation & Global Compression 🗜️
+### 2. De-fragmentation & Global Compression
 To evade exact-match filters, attackers split payloads across variables (e.g., `A="ign", B="ore"`).
 * **Mechanism:** The proxy implements a strict compression loop. It strips all spaces, punctuation, and obfuscation syntax (like quotation marks and plus signs) while retaining global Unicode characters (for Multilingual support). The result is a dense, normalized string where fragmented attacks are violently smashed back together.
 
-### 3. Levenshtein (Edit) Distance DP Matrix 📐
+### 3. Levenshtein (Edit) Distance DP Matrix
 Attackers inject random noise or misspell words (e.g., `i.g.n.o.r.e` or `insttructionns`) to bypass keyword detection.
 * **Mechanism:** A custom-built **Dynamic Programming 2D Matrix** calculates the mathematical Levenshtein Edit Distance between input chunks and known high-risk Action/Target word pairs. By analyzing the proximity of these matches via a sliding window, the algorithm detects semantic intent even when the text is heavily mutated.
 
-### 4. LLM Semantic Judge (Cognitive Smuggling Defense) 🧠
+### 4. LLM Semantic Judge (Cognitive Smuggling Defense)
 The ultimate bypass is "Cognitive Smuggling"—hiding malicious commands inside perfectly benign contexts (like fake tech support queries).
 * **Mechanism:** If the algorithmic DP matrix detects a potential threshold breach, it prevents an immediate block. Instead, it hands the payload to an **LLM Semantic Judge** (powered by Gemini 2.5 Flash). Guided by a strict meta-prompt, the Judge looks past the benign wrapper, isolating actual malicious intent while permitting legitimate "Code Context" queries (like debugging `system_override = True`).
 
 ---
 
-## 🛠️ Why These Technologies?
+## Why These Technologies?
 
 | Technology | Purpose & Rationale |
 | :--- | :--- |
@@ -59,7 +59,7 @@ The ultimate bypass is "Cognitive Smuggling"—hiding malicious commands inside 
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Python 3.9+
