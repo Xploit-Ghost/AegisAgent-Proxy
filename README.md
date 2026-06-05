@@ -92,5 +92,5 @@ The ultimate bypass is "Cognitive Smuggling"—hiding malicious commands inside 
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" />
-  <i>"Quis custodiet ipsos custodes?" - We do.</i>
+  <i>"Who guards the AI? We do."</i>
 </div>
